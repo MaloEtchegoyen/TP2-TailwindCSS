@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+
+@theme inline {
+  /* Déclaration de variables CSS dans le thème permet de générer également les classes utilitaires : bg-background, text-background... */
+  --color-background: var(--clr-bg);
+  --color-forground: var(--clr-fg);
+  --color-accent: var(--clr-accent);
+  --color-neutral: var(--clr-white);
+  --color-logo: var(--clr-white);
+  --background-image-image: var(--image ,('./assets/mobile/image-host.jpg'));
+  --background-image-pattern: var(--pattern);
+}
+
+@layer base {
+  :root {
+    /* Tokens Primitives */
+    --clr-teal-300: hsl(157, 100%, 85%);
+    ;
+    --clr-teal-400: hsl(157, 74%, 62%);
+    --clr-red-400: hsl(0, 96%, 61%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(225, 40%, 83%);
+    --clr-neutral-300: hsl(225, 21%, 45%);
+    --clr-neutral-400: hsl(225, 26%, 23%);
+    --clr-neutral-500: hsl(224, 35%, 11%);
+
+    /* Tokens Sémantiques */
+    --clr-bg: var(--clr-neutral-500);
+    --clr-fg: var(--clr-white);
+    --clr-accent: var(--clr-teal-400);
+    --clr-white: var(--clr-neutral-100);
+
+    --image: url('./assets/mobile/image-host.jpg');
+
+    @media (min-width: 48em) {
+      --image: url('./assets/tablet/image-host.jpg');
+    }
+    @media (min-width: 64em) {
+      --image: url('./assets/desktop/image-host.jpg');
+    }
+    --pattern: url('./assets/desktop/bg-pattern-dots.svg');
+  }
+
+
+
+}
